@@ -28,16 +28,19 @@ Paragraph default 1.6
 - Tints: 
 #fdf2e9
 #fae5d3
+#eb984e
 - Shades: 
 #cf711f
 - Accents:
 - Greys:
+#6f6f6f (lightest gray allowed on #fdf2e9)
  #555
  #333
  #888
 
 --- 05 SHADOWS
-
+ 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+ 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
 --- 06 BORDER-RADIUS 
 Default: 9px 
 Medium: 11px
@@ -83,6 +86,16 @@ body {
   display: grid;
   column-gap: 6.4rem;
   row-gap: 9.6rem;
+  /* margin-bottom: 9.6rem; */
+}
+
+/* .grid:last-child {
+  margin-bottom: 0;
+} */
+
+/* Only add margin if grid is not last child of the parent element */
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
 }
 
 .grid--2-cols {
@@ -91,6 +104,10 @@ body {
 
 .grid--3-cols {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .grid--center-v {
@@ -188,6 +205,26 @@ body {
 .link:active {
   color: #cf711f;
   border-bottom: 1px solid transparent;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-items {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
 }
 
 /* HELPER CLASSES */
